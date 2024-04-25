@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <!--font dos nomes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="conteudo1">
+            <div class="logo">
+                <img class="logo"  src="./logo.png" width="200vw"  alt="">
+            </div>
+            
+            <ul id="character-list">
+                <li>
+                    <img class="icons"   src="./icon-luffy.webp" alt="Monkey D. Luffy">
+                </li>
+                <li>
+                    <img class="icons"    src="./icon-zoro.jpg" alt="Roronoa Zoro">
+                </li>
+                <li>
+                    <img class="icons"    src="./icon-nami.png" alt="Nami">
+                </li>
+                <li>
+                    <img class="icons"    src="./icon-sanji.png" alt="Sanji">
+                </li>
+            </ul>
+            <ul id="character-list-2">
+                <li>
+                    <img class="icons"  src="./icon-doffy.jpg" alt="Donquixote Doflamingo">
+                </li>
+                <li>
+                    <img class="icons"  src="./icon-kaido.jpg" alt="Kaido">
+                </li>
+                <li>
+                    <img class="icons"  src="./icon-shanks.jpg" alt="Shanks">
+                </li>
+                <li>
+                    <img class="icons"  src="./icon-katakuri.png" alt="Charlotte Katakuri">
+                </li>
+            </ul>
+            <div class="conteudo2">
+                <img id="character-image" src="./luffy.png" width="500vw"  alt="">
+                <div class="descricao">
+                    <h1 id="character-name">Monkey D. Luffy</h1>
+                    <div class="linha1"></div>
+                    <p id="character-description">Luffy enfrentou inúmeras forças globais que encontrou,<br> começando contra os piratas mais poderosos do East Blue <br>e avançando para confrontos contra a Marinha</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Objeto com informações dos personagens
+        const characters = {
+            'Monkey D. Luffy': {
+                image: 'luffy.png',
+                description: 'Luffy enfrentou inúmeras forças globais que encontrou,\n\ começando contra os piratas mais poderosos do East Blue \n\e avançando para confrontos contra a Marinha',
+                
+            },
+    'Roronoa Zoro': {
+        image: 'zoro.png ',
+        description: 'Ele foi o primeiro membro a juntar-se à tripulação.\n\ Sua fama como mestre espadachim e sua grande força,\n\ juntamente com as ações de seu capitão',
+       
+    },
+            'Nami': {
+                image: 'nami.png',
+                description: 'Ela era anteriormente um membro dos Piratas do Arlong\n\ e inicialmente se juntou aos Chapéus de Palha para poder\n\ roubá-los e comprar de volta a sua aldeia de Arlong.',
+                
+            },
+            'Sanji': {
+                image: 'sanji.png',
+                description: 'é o cozinheiro dos Piratas do Chapéu de Palha,\n\ assim como um antigo chefe de cozinha do Baratie\n\.Ele é oficialmente o quinto membro da tripulação',
+               
+                
+                
+            },
+            'Donquixote Doflamingo': {
+                image: 'doffy.png ',
+                description: 'Donquixote Doflamingo, apelidado de "Demônio Celestial"\n\Ele é um grande antagonista no Arco Marineford, onde\n\ participou da Batalha de Marineford e se aliou a Marinha, \n\junto com a maioria dos outros Shichibukai',
+                
+            },
+            'Kaido': {
+                image: 'kaido.png',
+                description: 'Kaidou das Feras, também conhecido como a\n\ "Criatura Mais Forte do Mundo",ele e sua tripulação\n\ ocupavam o País de Wano em aliança com seu shogun,\n\ Kurozumi Orochi',
+                
+            },
+            'Shanks': {
+                image: 'shanks.png',
+                description: 'Shanks, "o Ruivo", é o chefe dos Piratas do Ruivo,Shanks \n\inspirou o jovem garoto da aldeia, Monkey D. Luffy a seguir\n\ sua própria jornada pirata sendo assim o responsável pelo\n\ garoto se tornar o notório fora-da-lei que ele é hoje',
+               
+            },
+            'Charlotte Katakuri': {
+                image: 'katakuri.png',
+                description: 'Charlotte Katakuri é o segundo filho e a terceira criança \n\da Família Charlotte.Devido às suas ações e papel, Katakuri\n\ é o antagonista secundário na segunda metade do Arco Ilha\n\ Whole Cake',
+                
+            }
+        };
+
+        const characterList = document.getElementById('character-list');
+        const characterList2 = document.getElementById('character-list-2');
+        const characterImage = document.getElementById('character-image');
+        const characterName = document.getElementById('character-name');
+        const characterDescription = document.getElementById('character-description');
+
+        characterList.addEventListener('mouseover', (event) => {
+            if (event.target.tagName === 'IMG') {
+                const name = event.target.alt;
+                const character = characters[name];
+                if (!character) {
+                    console.error(`Personagem "${name}" não encontrado.`);
+                    return;
+                }
+                characterImage.src = character.image;
+                
+                characterName.textContent = name;
+                characterDescription.textContent = character.description;
+            }
+        });
+
+        characterList2.addEventListener('mouseover', (event) => {
+            if (event.target.tagName === 'IMG') {
+                const name = event.target.alt;
+                const character = characters[name];
+                if (!character) {
+                    console.error(`Personagem "${name}" não encontrado.`);
+                    return;
+                }
+                characterImage.src = character.image;
+                characterName.textContent = name;
+                characterDescription.textContent = character.description;
+            }
+        });
+
+        characterList.addEventListener('mouseout', () => {
+            // Reset to default character
+            characterImage.src = './luffy.png';
+            characterName.textContent = 'Monkey D. Luffy';
+            characterDescription.textContent = 'Luffy enfrentou inúmeras forças globais que encontrou,\n\ começando contra os piratas mais poderosos do East Blue \n\e avançando para confrontos contra a Marinha';
+        });
+
+        characterList2.addEventListener('mouseout', () => {
+            // Reset to default character
+            characterImage.src = './luffy.png';
+            characterName.textContent = 'Monkey D. Luffy';
+            characterDescription.textContent = 'Luffy enfrentou inúmeras forças globais que encontrou,\n\ começando contra os piratas mais poderosos do East Blue \n\e avançando para confrontos contra a Marinha';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+body {
+    
+    overflow: hidden; /* Para esconder qualquer conteúdo que ultrapasse os limites do body */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./fundo\ \(3\).png);
+    background-size: 100%;
+    animation: animar 15s linear infinite;
+    z-index: -1; /* Para garantir que o pseudo-elemento fique atrás do conteúdo do body */
+}
+.barra1{
+    width: 15vw;
+    background-color: rgb(255, 255, 255);
+    height: 2px;
+    
+}
+.icons{
+    width:10vw;
+    height: 30vh;
+    padding-right: 10px;
+}
+li , .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    display: flex;
+    margin-left: 15vw;
+    padding-top: 5px;
+}
+.conteudo1{
+    margin-top: 20px;
+}
+.conteudo2{
+    float: right;
+    margin-top: -72vh;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1vw;
+   
+}
+#character-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.descricao{
+   
+   color: #ffffff;
+   margin-top: -40px;
+   justify-content: center;
+   align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+#character-description{
+    white-space: pre-line;
+    font-size: 1.2vw;
+    justify-content: center;
+    align-items: center;
+}
+.icons:hover{
+    box-shadow: 0px 0px 15px 5px rgb(255, 255, 255);
+}
+#character-image{
+    width: 33vw;
+}
+.linha1{
+    width: 100%;
+    background-color: #ffffff;
+    height: 1px;
+}
+@keyframes animar {
+    0% {
+        background-position: 0% 0%; /* posição inicial */
+    }
+    100% {
+        background-position: 0% -100%; /* posição final (subindo) */
+    }
+}
