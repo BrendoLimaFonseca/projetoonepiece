@@ -89,3 +89,35 @@ ul{
         background-position: 0% -100%; /* posição final (subindo) */
     }
 }
+@media screen and (max-width: 480px){
+    
+    #character-description{
+        position: relative;
+        top: 25vh;
+        font-size: 13px;
+    }
+    .icons{
+        width: 100%;
+        position: relative;
+        right: 55%;
+        top: 45vh;
+        margin-bottom: 15px;
+        height: 20vh;
+        
+        
+    }
+    li{
+        padding-right: 20px;
+    }
+    .logo{
+        display: none;
+    }
+    #character-image{
+        position: relative;
+        top: 30vh;
+        width: 70%;
+        left: 17%;
+    }
+    
+
+}
