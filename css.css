@@ -93,8 +93,9 @@ ul{
     
     #character-description{
         position: relative;
-        top: 25vh;
+        top: 30vh;
         font-size: 13px;
+        white-space: normal;
     }
     .icons{
         width: 100%;
@@ -118,6 +119,15 @@ ul{
         width: 70%;
         left: 17%;
     }
+   #character-name{
+    font-size: 100%;
+    position: relative;
+    top: 2vh;
+   }
+   .linha1{
+    position: relative;
+    top: 2vh;
+   }
     
 
 }
